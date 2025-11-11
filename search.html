@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FIND and SEARCH Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+        .formula-section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>FIND and SEARCH Formula Practice 📝</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>FIND & SEARCH: Locating Text Position</h2>
+
+            <p>
+                The **FIND** and **SEARCH** functions both return the **starting position** of a text string (the `find_text`) within another text string. They are most useful when combined with text extraction functions like **MID**.
+            </p>
+            <p>
+                **Key Difference:** **FIND** is **case-sensitive** and does not allow wildcards. **SEARCH** is **not case-sensitive** and allows wildcards (* and ?).
+            </p>
+
+            ---
+
+            <div class="formula-section">
+                <h3>1. FIND Function (Case-Sensitive)</h3>
+
+                <div class="formula-syntax">
+                    <code>=FIND(find_text, within_text, [start_num])</code>
+                </div>
+
+                <ul class="argument-list">
+                    <li>
+                        <strong>find_text</strong>: The text you want to find (e.g., `"@"` or `"Code"`).
+                    </li>
+                    <li>
+                        <strong>within_text</strong>: The text containing the text you want to find (e.g., cell `A2`).
+                    </li>
+                    <li>
+                        <strong>[start_num]</strong>: *Optional*. The character position to start the search from (default is 1).
+                    </li>
+                </ul>
+
+                <h4>Example 💡 (FIND)</h4>
+                <p>If A2 contains **"North-ID-123"**, this finds the position of the hyphen. Since FIND is case-sensitive, searching for "id" would fail.</p>
+                <div class="formula-syntax">
+                    <code>=FIND("-", A2)</code>  <span style="font-weight: normal;">&rarr; Result: **6**</span>
+                </div>
+            </div>
+
+            ---
+
+            <div class="formula-section">
+                <h3>2. SEARCH Function (Not Case-Sensitive)</h3>
+
+                <div class="formula-syntax">
+                    <code>=SEARCH(find_text, within_text, [start_num])</code>
+                </div>
+
+                <ul class="argument-list">
+                    <li>
+                        <strong>find_text</strong>: The text you want to find.
+                    </li>
+                    <li>
+                        <strong>within_text</strong>: The text containing the text you want to find.
+                    </li>
+                    <li>
+                        <strong>[start_num]</strong>: *Optional*. The character position to start the search from (default is 1).
+                    </li>
+                </ul>
+
+                <h4>Example 💡 (SEARCH)</h4>
+                <p>If B2 contains **"Apple - Gala"**, this finds the position of "gala" even though the case is different.</p>
+                <div class="formula-syntax">
+                    <code>=SEARCH("gala", B2)</code>  <span style="font-weight: normal;">&rarr; Result: **10**</span>
+                </div>
+            </div>
+
+            ---
+
+            <h3>Combined Dynamic Extraction Example</h3>
+            <p>
+                If A2 contains an email **"john.doe@company.com"**. You want to extract the company name ("company") using MID and FIND:
+            </p>
+            <div class="formula-syntax">
+                <code>=MID(A2, FIND("@", A2)+1, FIND(".", A2)-FIND("@", A2)-1)</code>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

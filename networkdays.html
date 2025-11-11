@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NETWORKDAYS Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>NETWORKDAYS Formula Practice 🗓️</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>NETWORKDAYS: Calculating Working Days</h2>
+
+            <p>
+                The **NETWORKDAYS** function calculates the number of whole **working days** between two dates. By default, it excludes **Saturdays and Sundays** and can optionally exclude a list of holidays.
+            </p>
+            <p>
+                **Key Use:** Project scheduling, calculating delivery lead times, and measuring employee time cards.
+            </p>
+
+            ---
+
+            <h3>Formula Syntax</h3>
+            <div class="formula-syntax">
+                <code>=NETWORKDAYS(start_date, end_date, [holidays])</code>
+            </div>
+
+            <p class="note">
+                **Note:** If you need to specify different weekend days (e.g., Friday/Saturday), you must use the **NETWORKDAYS.INTL** function instead.
+            </p>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+            <ul class="argument-list">
+                <li>
+                    <strong>start_date</strong>: The initial date of the period.
+                </li>
+                <li>
+                    <strong>end_date</strong>: The final date of the period.
+                </li>
+                <li>
+                    <strong>[holidays]</strong>: *Optional*. A range of cells containing dates that should also be excluded from the count (e.g., statutory holidays).
+                </li>
+            </ul>
+
+            ---
+
+            <h3>Example 💡 (Simple Working Days Count)</h3>
+            <p>
+                To find the number of working days between January 1, 2025 (in A2) and January 31, 2025 (in B2), excluding weekends:
+            </p>
+            <div class="formula-syntax">
+                <code>=NETWORKDAYS(A2, B2)</code>
+            </div>
+
+            <h3>Example 💡 (Excluding Holidays)</h3>
+            <p>
+                To calculate the working days, also excluding a list of holiday dates stored in the range **D2:D5**:
+            </p>
+            <div class="formula-syntax">
+                <code>=NETWORKDAYS(A2, B2, D2:D5)</code>
+            </div>
+
+            <p class="note">
+                **Crucial Detail:** **NETWORKDAYS** is inclusive. It counts the start date and the end date if they are working days.
+            </p>
+
+        </div>
+    </section>
+
+</body>
+</html>

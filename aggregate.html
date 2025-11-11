@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AGGREGATE Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #217346;
+        }
+    </style>
+</head>
+<body>
+
+    <header>AGGREGATE Formula Practice 🧮</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>AGGREGATE: Calculation with Exception Handling</h2>
+
+            <p>
+                The **AGGREGATE** function is a highly flexible tool used to apply a wide range of aggregate calculations (like SUM, AVERAGE, COUNT, MIN, MAX, etc.) to a list or database. Its main advantage is its ability to **ignore errors, hidden rows, or nested SUBTOTAL/AGGREGATE functions**.
+            </p>
+            <p>
+                **Key Use:** Performing reliable calculations on filtered data or data ranges that contain error values without needing complex `IFERROR` wrappers.
+            </p>
+
+            ---
+
+            <h3>Formula Syntax (Array Form - Most Common)</h3>
+            <div class="formula-syntax">
+                <code>=AGGREGATE(function_num, options, array, [k])</code>
+            </div>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+
+            <h4>1. Function Number (`function_num`)</h4>
+            <p>A number from 1 to 19 that specifies which function to use (e.g., SUM, AVERAGE, etc.).</p>
+            <table border="1">
+                <thead>
+                    <tr><th>Number</th><th>Function</th><th>Number</th><th>Function</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>**1**</td><td>AVERAGE</td><td>**9**</td><td>SUM</td></tr>
+                    <tr><td>**2**</td><td>COUNT</td><td>**14**</td><td>LARGE</td></tr>
+                    <tr><td>**3**</td><td>COUNTA</td><td>**15**</td><td>SMALL</td></tr>
+                    <tr><td>**4**</td><td>MAX</td><td>**16**</td><td>PERCENTILE.INC</td></tr>
+                </tbody>
+            </table>
+            
+            <h4>2. Options (`options`)</h4>
+            <p>A number from 0 to 7 specifying which values to ignore.</p>
+            <table border="1">
+                <thead>
+                    <tr><th>Number</th><th>Action</th><th>Purpose</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>**0**</td><td>Ignore nested SUBTOTAL and AGGREGATE functions</td><td>Standard behavior.</td></tr>
+                    <tr><td>**1**</td><td>Ignore hidden rows</td><td>**Crucial for Filtered Data.**</td></tr>
+                    <tr><td>**2**</td><td>Ignore error values</td><td>**Crucial for Data with Errors.**</td></tr>
+                    <tr><td>**3**</td><td>Ignore hidden rows and error values</td><td>**Most common/robust option.**</td></tr>
+                    <tr><td>7</td><td>Ignore hidden rows, error values, and nested subtotals</td><td>The most comprehensive ignoring option.</td></tr>
+                </tbody>
+            </table>
+
+            <h4>3. Array (`array`)</h4>
+            <p>The range of data you want to aggregate (e.g., `C2:C100`).</p>
+
+            <h4>4. [k]</h4>
+            <p>*Required only for functions 14-19 (LARGE, SMALL, etc.)*. The rank (k) to return, similar to the `k` argument in the `LARGE` or `SMALL` functions.</p>
+
+            ---
+
+            <h3>Example 💡 (Summing Visible, Error-Free Data)</h3>
+            <p>
+                Calculate the **SUM** (Function **9**) of the Sales data in column C, while **ignoring both hidden rows and error values** (Option **3**):
+            </p>
+            <div class="formula-syntax">
+                <code>=AGGREGATE(9, 3, C2:C100)</code>
+            </div>
+
+            <h3>Example 💡 (Finding the 2nd Smallest Value, Ignoring Errors)</h3>
+            <p>
+                Find the **2nd smallest value** (Function **15**) in the Price list, while **ignoring error values** (Option **2**):
+            </p>
+            <div class="formula-syntax">
+                <code>=AGGREGATE(15, 2, D2:D50, 2)</code>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

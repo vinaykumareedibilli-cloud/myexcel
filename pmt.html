@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PMT Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>PMT Formula Practice 💰</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>PMT: Calculating Periodic Loan Payments</h2>
+
+            <p>
+                The **PMT** function calculates the **periodic payment** for a loan based on constant payments and a constant interest rate. This is the function you use to figure out your monthly mortgage or car loan payment.
+            </p>
+            <p>
+                **Crucial Rule:** The result of the PMT function is generally displayed as a **negative number** because it represents a cash outflow (money you pay).
+            </p>
+
+            ---
+
+            <h3>Formula Syntax</h3>
+            <div class="formula-syntax">
+                <code>=PMT(rate, nper, pv, [fv], [type])</code>
+            </div>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+            <ul class="argument-list">
+                <li>
+                    <strong>rate</strong>: The **interest rate per period**. Always divide the annual rate by the number of payment periods per year (e.g., annual rate / 12 for monthly payments).
+                </li>
+                <li>
+                    <strong>nper</strong>: The **total number of payment periods** in the loan (e.g., loan term in years * 12 for monthly payments).
+                </li>
+                <li>
+                    <strong>pv</strong>: The **Present Value**, or the total amount the series of future payments is worth now (i.e., the loan principal or the amount borrowed).
+                </li>
+                <li>
+                    <strong>[fv]</strong>: *Optional*. The **Future Value**, or the cash balance you want after the last payment is made. Default is 0 (the loan is fully paid off).
+                </li>
+                <li>
+                    <strong>[type]</strong>: *Optional*. When payments are due: **0** for the end of the period (default), **1** for the beginning of the period.
+                </li>
+            </ul>
+
+            ---
+
+            <h3>Example 💡</h3>
+            <p>
+                Calculate the **monthly payment** for a **$20,000** car loan over **5 years** with a **6% annual interest rate** (where payments are monthly):
+            </p>
+            <div class="formula-syntax">
+                <code>=PMT(6%/12, 5*12, 20000)</code>  <span style="font-weight: normal;">&rarr; Result: **-$386.66** (The monthly payment)</span>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

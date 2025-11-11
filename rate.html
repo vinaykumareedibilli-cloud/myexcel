@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RATE Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>RATE Formula Practice 💰</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>RATE: Calculating the Interest Rate Per Period</h2>
+
+            <p>
+                The **RATE** function calculates the **interest rate per period** for an annuity. Since the rate returned is per period (e.g., monthly), you must **multiply the result** by the number of periods per year (ee.g., *12) to get the Annual Percentage Rate (**APR**).
+            </p>
+            <p>
+                **Key Use:** Finding the effective interest rate on a loan or determining the yield on an investment.
+            </p>
+
+            ---
+
+            <h3>Formula Syntax</h3>
+            <div class="formula-syntax">
+                <code>=RATE(nper, pmt, pv, [fv], [type], [guess])</code>
+            </div>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+            <ul class="argument-list">
+                <li>
+                    <strong>nper</strong>: The **total number of payment periods** in the loan or investment.
+                </li>
+                <li>
+                    <strong>pmt</strong>: The **payment** made each period. This must be a **negative number** (cash outflow).
+                </li>
+                <li>
+                    <strong>pv</strong>: The **Present Value** (PV), or the total amount borrowed/invested today. For a loan, this is the principal (positive number).
+                </li>
+                <li>
+                    <strong>[fv]</strong>: *Optional*. The **Future Value**. Default is 0.
+                </li>
+                <li>
+                    <strong>[guess]</strong>: *Optional*. Your initial guess for the rate. Default is 10%.
+                </li>
+            </ul>
+
+            ---
+
+            <h3>Example 💡 (Calculating APR on a Loan)</h3>
+            <p>
+                A $10,000 loan is paid off with monthly payments of $200 over 5 years. Calculate the annual interest rate:
+            </p>
+            <div class="formula-syntax">
+                <code>=RATE(5*12, -200, 10000) * 12</code>  <span style="font-weight: normal;">&rarr; Result: **~9.70%** (The annual rate)</span>
+            </div>
+            
+            <p class="note">
+                **Explanation:** The raw `RATE` result is the monthly rate. We multiply by 12 to annualize it. The payment (`-200`) is negative (outflow), and the principal (`10000`) is positive (inflow/money received).
+            </p>
+
+        </div>
+    </section>
+
+</body>
+</html>

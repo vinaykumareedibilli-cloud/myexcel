@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRIM Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>TRIM Formula Practice 🧹</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>TRIM: Removing Excess Spaces</h2>
+
+            <p>
+                The **TRIM** function removes **all extra spaces** from a text string, except for single spaces between words. This is vital for cleaning data imported from other sources that may contain leading, trailing, or multiple internal spaces.
+            </p>
+            <p>
+                **Key Use:** Data cleaning, ensuring consistency for lookups (VLOOKUP, XLOOKUP, etc.), and making text readable.
+            </p>
+
+            ---
+
+            <h3>Formula Syntax</h3>
+            <div class="formula-syntax">
+                <code>=TRIM(text)</code>
+            </div>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+            <ul class="argument-list">
+                <li>
+                    <strong>text</strong>: The text string or cell reference containing the text you want to clean (e.g., `A2`).
+                </li>
+            </ul>
+
+            ---
+
+            <h3>Example 💡</h3>
+            <p>
+                If A2 contains **"   North   Region  "** (note the leading, trailing, and double spaces), TRIM cleans it up:
+            </p>
+            <div class="formula-syntax">
+                <code>=TRIM(A2)</code>  <span style="font-weight: normal;">&rarr; Result: **"North Region"**</span>
+            </div>
+            
+            <p class="note">
+                **Note:** TRIM only handles standard spaces. To remove non-printing characters (like line breaks), you may need the **CLEAN** function.
+            </p>
+
+        </div>
+    </section>
+
+</body>
+</html>

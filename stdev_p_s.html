@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STDEV.P and STDEV.S Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+        .formula-section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>STDEV.P and STDEV.S Formula Practice 📈</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>STDEV.P & STDEV.S: Standard Deviation</h2>
+
+            <p>
+                **Standard Deviation** is a measure of the amount of variation or dispersion of a set of values. A low standard deviation indicates that the values tend to be close to the mean (average) of the set, while a high standard deviation indicates that the values are spread out over a wider range.
+            </p>
+
+            <p>
+                **Key Difference:** The choice between `STDEV.P` and `STDEV.S` depends on whether your data represents the **entire population** or just a **sample**.
+            </p>
+
+            ---
+
+            <div class="formula-section">
+                <h3>1. STDEV.P (Population Standard Deviation)</h3>
+
+                <p>Calculates the standard deviation based on the **entire population** given as arguments.</p>
+
+                <div class="formula-syntax">
+                    <code>=STDEV.P(number1, [number2], ...)</code>
+                </div>
+
+                <ul class="argument-list">
+                    <li>
+                        <strong>number1, [number2], ...</strong>: The numbers representing the entire population. This is typically a range of cells (e.g., `A2:A100`).
+                    </li>
+                </ul>
+
+                <h4>Example 💡 (STDEV.P)</h4>
+                <p>
+                    You have sales data for **every single store** your company owns (the entire population). You use `STDEV.P` on the sales figures:
+                </p>
+                <div class="formula-syntax">
+                    <code>=STDEV.P(C2:C100)</code>
+                </div>
+            </div>
+
+            ---
+
+            <div class="formula-section">
+                <h3>2. STDEV.S (Sample Standard Deviation)</h3>
+
+                <p>Calculates the standard deviation based on a **sample** of the population. This is the **most common** scenario in statistical analysis.</p>
+
+                <div class="formula-syntax">
+                    <code>=STDEV.S(number1, [number2], ...)</code>
+                </div>
+                
+                <p class="note">
+                    **Technical Note:** `STDEV.S` uses $n-1$ in the denominator (Bessel's correction) to provide an unbiased estimate of the population standard deviation, making it more appropriate for samples.
+                </p>
+
+                <ul class="argument-list">
+                    <li>
+                        <strong>number1, [number2], ...</strong>: A numerical **sample** of the population.
+                    </li>
+                </ul>
+
+                <h4>Example 💡 (STDEV.S)</h4>
+                <p>
+                    You have sales data for a random selection of **30 stores** (a sample of the population). You use `STDEV.S` on the sales figures:
+                </p>
+                <div class="formula-syntax">
+                    <code>=STDEV.S(C2:C31)</code>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

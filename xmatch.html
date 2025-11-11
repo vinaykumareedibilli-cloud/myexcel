@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XMATCH Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>XMATCH Formula Practice 🎯</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>XMATCH: The Modern MATCH Function</h2>
+
+            <p>
+                The **XMATCH** function searches for a specified item in a range of cells and returns its **relative position**. It is designed to replace the older **MATCH** function by providing more flexible matching options and search directions.
+            </p>
+            <p>
+                **Key Use:** Like MATCH, it's often used with **INDEX** (e.g., <code>INDEX(data, XMATCH(...))</code>) to create advanced lookups.
+            </p>
+
+            ---
+
+            <h3>Formula Syntax</h3>
+            <div class="formula-syntax">
+                <code>=XMATCH(lookup_value, lookup_array, [match_mode], [search_mode])</code>
+            </div>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+            <ul class="argument-list">
+                <li>
+                    <strong>lookup_value</strong>: The value you are searching for (e.g., a specific product ID).
+                </li>
+                <li>
+                    <strong>lookup_array</strong>: The single column or row that contains the value you are searching for.
+                </li>
+                <li>
+                    <strong>[match_mode]</strong>: *Optional*. Specifies the type of match (0 for exact match is default, unlike the old MATCH function).
+                    <ul>
+                        <li>**0:** Exact match (default)</li>
+                        <li>**-1:** Exact match or next smaller item</li>
+                        <li>**1:** Exact match or next larger item</li>
+                        <li>**2:** Wildcard match</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>[search_mode]</strong>: *Optional*. Specifies the search direction.
+                    <ul>
+                        <li>**1:** Search from first to last (default)</li>
+                        <li>**-1:** Search from last to first (reverse)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            ---
+
+            <h3>Example 💡 (Simple Position)</h3>
+            <p>
+                To find the position of the name in cell A2 within the list of names in column C, using the default exact match:
+            </p>
+            <div class="formula-syntax">
+                <code>=XMATCH(A2, C:C)</code>
+            </div>
+            
+            <h3>Example 💡 (Reverse Search)</h3>
+            <p>
+                Find the position of the *last* occurrence of "Closed" in the Status column (D:D):
+            </p>
+            <div class="formula-syntax">
+                <code>=XMATCH("Closed", D:D, 0, -1)</code>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

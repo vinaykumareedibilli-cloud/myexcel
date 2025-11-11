@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AND Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>AND Formula Practice ⚙️</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>AND: Checking Multiple Conditions (All Must be TRUE)</h2>
+
+            <p>
+                The **AND** function checks if **all** of the arguments (conditions) are true. It returns **TRUE** only if *every single condition* is met. If even one condition is false, it returns **FALSE**.
+            </p>
+            <p>
+                **Key Use:** AND is typically nested inside an **IF** function to test complex rules (e.g., "If the profit is > 10% **AND** the inventory is < 50, then reorder.").
+            </p>
+
+            ---
+
+            <h3>Formula Syntax</h3>
+            <div class="formula-syntax">
+                <code>=AND(logical1, [logical2], ...)</code>
+            </div>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+            <ul class="argument-list">
+                <li>
+                    <strong>logical1</strong>: The first condition you want to test that can be evaluated to TRUE or FALSE. (e.g., `A2 > 100`).
+                </li>
+                <li>
+                    <strong>[logical2], ...</strong>: *Optional*. Additional conditions you want to test. Up to 255 conditions can be included. (e.g., `B2 < 5000`).
+                </li>
+            </ul>
+
+            ---
+
+            <h3>Example 💡</h3>
+            <p>
+                To return TRUE if the score (C5) is above 70 **AND** the status (D5) is "Complete." If either condition fails, it returns FALSE.
+            </p>
+            <div class="formula-syntax">
+                <code>=AND(C5 > 70, D5 = "Complete")</code>
+            </div>
+            
+            <p>
+                **Example nested in IF:** <code>=IF(AND(C5 > 70, D5 = "Complete"), "Passed All Rules", "Failed Rule")</code>
+            </p>
+            
+        </div>
+    </section>
+
+</body>
+</html>

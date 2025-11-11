@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SORT and SORTBY Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+        .formula-section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>SORT and SORTBY Formula Practice ⚡</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>SORT & SORTBY: Dynamic Sorting</h2>
+
+            <p>
+                The **SORT** and **SORTBY** functions are **Dynamic Array Formulas** that return a sorted version of a range of data. Unlike manual sorting, these functions create a new, live-updating output.
+            </p>
+            <p>
+                **Key Difference:** **SORT** sorts by the columns *within the array itself*. **SORTBY** sorts an array based on the values in a *separate* column or range.
+            </p>
+
+            ---
+
+            <div class="formula-section">
+                <h3>1. SORT Function (Sorting by Columns Within the Array)</h3>
+
+                <p>The simplest way to sort a range of data by one of its columns.</p>
+
+                <div class="formula-syntax">
+                    <code>=SORT(array, [sort_index], [sort_order], [by_col])</code>
+                </div>
+
+                <ul class="argument-list">
+                    <li>
+                        <strong>array</strong>: The range to sort (e.g., the entire table `A2:D100`).
+                    </li>
+                    <li>
+                        <strong>[sort_index]</strong>: *Optional*. The column number in the `array` to sort by (1 for the first column, 2 for the second, etc.). Default is 1.
+                    </li>
+                    <li>
+                        <strong>[sort_order]</strong>: *Optional*. **1** for Ascending (default) or **-1** for Descending.
+                    </li>
+                </ul>
+
+                <h4>Example 💡 (SORT)</h4>
+                <p>To sort the table A2:D100 by the second column (Column B) in descending order:</p>
+                <div class="formula-syntax">
+                    <code>=SORT(A2:D100, 2, -1)</code>
+                </div>
+            </div>
+
+            ---
+
+            <div class="formula-section">
+                <h3>2. SORTBY Function (Sorting by External/Custom Columns)</h3>
+
+                <p>Sorts an array using one or more columns that may not be contained within the array itself.</p>
+
+                <div class="formula-syntax">
+                    <code>=SORTBY(array, by_array1, [sort_order1], [by_array2, sort_order2], ...)</code>
+                </div>
+
+                <ul class="argument-list">
+                    <li>
+                        <strong>array</strong>: The range you want to return (e.g., `A2:A100`).
+                    </li>
+                    <li>
+                        <strong>by_array1</strong>: The range containing the values you want to sort by (e.g., the Sales column, `D2:D100`).
+                    </li>
+                    <li>
+                        <strong>[sort_order1]</strong>: **1** (Ascending) or **-1** (Descending) for the first sort array.
+                    </li>
+                </ul>
+
+                <h4>Example 💡 (SORTBY)</h4>
+                <p>To sort just the names in Column A based on their corresponding Sales values in Column D (descending):</p>
+                <div class="formula-syntax">
+                    <code>=SORTBY(A2:A100, D2:D100, -1)</code>
+                </div>
+                <p class="note">
+                    **Combined Use:** You can nest **FILTER** and **SORT** to dynamically extract and order data in a single step!
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

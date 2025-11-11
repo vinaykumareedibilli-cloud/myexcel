@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EOMONTH Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>EOMONTH Formula Practice 📅</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>EOMONTH: Calculating the End of the Month</h2>
+
+            <p>
+                The **EOMONTH** function is used to calculate the date of the **last day of the month** that is a specified number of months in the future or past from a given `start_date`.
+            </p>
+            <p>
+                **Key Use:** Setting due dates (e.g., invoices always due on the last day of the month), calculating the end date of fiscal quarters, or determining subscription renewal dates.
+            </p>
+
+            ---
+
+            <h3>Formula Syntax</h3>
+            <div class="formula-syntax">
+                <code>=EOMONTH(start_date, months)</code>
+            </div>
+
+            <p class="note">
+                **Result Format:** EOMONTH returns a date as a **serial number**. Be sure to format the cell as a **Date** for a readable result.
+            </p>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+            <ul class="argument-list">
+                <li>
+                    <strong>start_date</strong>: The initial date. Can be a cell reference (e.g., `A2`) or a date function (e.g., `TODAY()`).
+                </li>
+                <li>
+                    <strong>months</strong>: A positive or negative whole number representing the number of months before or after the `start_date`.
+                    <ul>
+                        <li>**0:** Returns the end of the same month as the `start_date`.</li>
+                        <li>**1:** Returns the end of the next month.</li>
+                        <li>**-1:** Returns the end of the previous month.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            ---
+
+            <h3>Example 💡 (End of Current Month)</h3>
+            <p>
+                To find the last day of the current month, regardless of the current day:
+            </p>
+            <div class="formula-syntax">
+                <code>=EOMONTH(TODAY(), 0)</code>
+            </div>
+
+            <h3>Example 💡 (Quarterly Due Date)</h3>
+            <p>
+                If the invoice date is in **A2**, find the due date, which is the end of the month **three months later**:
+            </p>
+            <div class="formula-syntax">
+                <code>=EOMONTH(A2, 3)</code>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

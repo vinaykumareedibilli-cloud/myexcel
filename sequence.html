@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEQUENCE Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>SEQUENCE Formula Practice 🔢</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>SEQUENCE: Generating a List of Numbers</h2>
+
+            <p>
+                The **SEQUENCE** function is a **Dynamic Array Formula** that generates a list of sequential numbers into an array (a range of cells). This list can be a single column, a single row, or a rectangular grid.
+            </p>
+            <p>
+                **Key Use:** Quickly creating numbering for reports, generating a list of dates, or setting up complex dynamic data grids.
+            </p>
+
+            ---
+
+            <h3>Formula Syntax</h3>
+            <div class="formula-syntax">
+                <code>=SEQUENCE(rows, [columns], [start], [step])</code>
+            </div>
+
+            <p class="note">
+                **Dynamic Array Note:** Enter the formula once in the top-left cell; the results "spill" automatically into adjacent cells.
+            </p>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+            <ul class="argument-list">
+                <li>
+                    <strong>rows</strong>: The number of rows of data to return.
+                </li>
+                <li>
+                    <strong>[columns]</strong>: *Optional*. The number of columns of data to return. Default is 1.
+                </li>
+                <li>
+                    <strong>[start]</strong>: *Optional*. The starting number of the sequence. Default is 1.
+                </li>
+                <li>
+                    <strong>[step]</strong>: *Optional*. The amount to increment each subsequent value in the sequence. Default is 1.
+                </li>
+            </ul>
+
+            ---
+
+            <h3>Example 💡 (Simple Column List)</h3>
+            <p>
+                To generate a numbered list of 10 items in a single column, starting at 1:
+            </p>
+            <div class="formula-syntax">
+                <code>=SEQUENCE(10)</code>
+            </div>
+
+            <h3>Example 💡 (Dynamic Grid)</h3>
+            <p>
+                To create a 5-row by 3-column grid, starting at 100 and counting up by 10 (100, 110, 120, etc., row-by-row):
+            </p>
+            <div class="formula-syntax">
+                <code>=SEQUENCE(5, 3, 100, 10)</code>
+            </div>
+
+            <h3>Example 💡 (Generating Dates)</h3>
+            <p>
+                To generate the next 30 days starting from today's date (where TODAY() returns a number treated as a date):
+            </p>
+            <div class="formula-syntax">
+                <code>=TODAY() + SEQUENCE(30)</code>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

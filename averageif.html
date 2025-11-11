@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AVERAGEIF Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>AVERAGEIF Formula Practice 📘</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>AVERAGEIF: Conditional Average (Single Criterion)</h2>
+
+            <p>
+                The **AVERAGEIF** function calculates the **average (arithmetic mean)** of all cells in a range that meet a given single **criterion**. It combines the power of AVERAGE with conditional logic.
+            </p>
+            <p>
+                **Key Use:** Finding the average sales per day of the week, or the average score for students who passed (score > 60).
+            </p>
+
+            ---
+
+            <h3>Formula Syntax</h3>
+            <div class="formula-syntax">
+                <code>=AVERAGEIF(range, criteria, [average_range])</code>
+            </div>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+            <ul class="argument-list">
+                <li>
+                    <strong>range</strong>: The range of cells that you want to apply the **criteria** against. (e.g., Column A, which lists regions).
+                </li>
+                <li>
+                    <strong>criteria</strong>: The condition that defines which cells in the `range` will be averaged. (e.g., `"North"`, `"<100"`).
+                </li>
+                <li>
+                    <strong>[average_range]</strong>: *Optional*. The actual range of cells that contain the values to average. If omitted, the `range` is used as the average range. (e.g., Column B, which lists sales figures).
+                </li>
+            </ul>
+
+            ---
+
+            <h3>Example 💡</h3>
+            <p>
+                To find the average unit price (Column C) for all products listed as **"Small"** (Column B):
+            </p>
+            <div class="formula-syntax">
+                <code>=AVERAGEIF(B:B, "Small", C:C)</code>
+            </div>
+            
+        </div>
+    </section>
+
+</body>
+</html>   

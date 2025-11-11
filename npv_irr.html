@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NPV and IRR Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+        .formula-section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>NPV and IRR Formula Practice 📊</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>NPV & IRR: Investment Decision Tools</h2>
+
+            <p>
+                **Net Present Value (NPV)** and **Internal Rate of Return (IRR)** are two methods used to analyze the profitability of an investment or project by considering the time value of money.
+            </p>
+            <p>
+                **Cash Flow Rule:** Cash flows (payments/receipts) must be ordered chronologically, and the initial investment (cash outflow) should be a **negative number**.
+            </p>
+
+            ---
+
+            <div class="formula-section">
+                <h3>1. NPV Function (Net Present Value)</h3>
+
+                <p>Calculates the sum of the present values of a series of future cash flows, discounted at a user-specified rate.</p>
+
+                <div class="formula-syntax">
+                    <code>=NPV(rate, value1, [value2], ...)</code>
+                </div>
+
+                <ul class="argument-list">
+                    <li>
+                        <strong>rate</strong>: The discount rate over the length of one period (e.g., your required rate of return or cost of capital).
+                    </li>
+                    <li>
+                        <strong>value1, [value2], ...</strong>: The cash flows that occur at the end of each period. These must be cash flows starting from period 1 (Year 1, Month 1, etc.).
+                    </li>
+                </ul>
+
+                <h4>Example 💡 (NPV - The Correct Way)</h4>
+                <p>
+                    If the initial investment (Year 0) is -$10,000 (in cell A1), and cash flows for Years 1-5 are in cells B1:F1. **Note:** The initial investment must be added separately to the NPV result.
+                </p>
+                <div class="formula-syntax">
+                    <code>=A1 + NPV(10%, B1:F1)</code>
+                </div>
+                <p class="note">
+                    **Decision Rule:** Accept the project if the NPV is **greater than 0**.
+                </p>
+            </div>
+
+            ---
+
+            <div class="formula-section">
+                <h3>2. IRR Function (Internal Rate of Return)</h3>
+
+                <p>Calculates the **discount rate** at which the Net Present Value (NPV) of all the cash flows from a particular project equals zero.</p>
+
+                <div class="formula-syntax">
+                    <code>=IRR(values, [guess])</code>
+                </div>
+
+                <ul class="argument-list">
+                    <li>
+                        <strong>values</strong>: A range of cells containing the cash flows. This range **must include the initial investment (Year 0)** as the first value.
+                    </li>
+                    <li>
+                        <strong>[guess]</strong>: *Optional*. Your initial guess for the rate of return. Default is 0.1 (10%).
+                    </li>
+                </ul>
+
+                <h4>Example 💡 (IRR)</h4>
+                <p>
+                    Calculate the IRR for a project where the initial investment (-$10,000) and all future cash flows (Years 1-5) are in cells A1:F1:
+                </p>
+                <div class="formula-syntax">
+                    <code>=IRR(A1:F1)</code>
+                </div>
+                <p class="note">
+                    **Decision Rule:** Accept the project if the calculated IRR is **greater than** your required rate of return (or cost of capital).
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

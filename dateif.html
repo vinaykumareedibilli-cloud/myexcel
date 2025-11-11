@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DATEDIF Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #217346;
+        }
+    </style>
+</head>
+<body>
+
+    <header>DATEDIF Formula Practice 📅</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>DATEDIF: Calculating the Difference Between Dates</h2>
+
+            <p>
+                The **DATEDIF** (Date Difference) function is a hidden legacy function in Excel that calculates the **number of whole days, months, or years** between a start date and an end date.
+            </p>
+            <p>
+                **Key Use:** Calculating accurate age, employee tenure, or the exact duration of time-based metrics.
+            </p>
+
+            ---
+
+            <h3>Formula Syntax</h3>
+            <div class="formula-syntax">
+                <code>=DATEDIF(start_date, end_date, unit)</code>
+            </div>
+
+            <p class="note">
+                **Important:** The `start_date` must always be chronologically **before** the `end_date`.
+            </p>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+            <ul class="argument-list">
+                <li>
+                    <strong>start_date</strong>: The initial date (e.g., date of birth, start of employment).
+                </li>
+                <li>
+                    <strong>end_date</strong>: The final date (e.g., today's date, resignation date).
+                </li>
+                <li>
+                    <strong>unit</strong>: A code, entered as text in quotation marks, specifying the type of interval to return:
+                </li>
+            </ul>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Unit Code</th>
+                        <th>Returns</th>
+                        <th>Example Use</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>**"Y"**</td>
+                        <td>The number of **complete years** in the period.</td>
+                        <td>Calculating a person's exact age.</td>
+                    </tr>
+                    <tr>
+                        <td>**"M"**</td>
+                        <td>The number of **complete months** in the period.</td>
+                        <td>Total months of service.</td>
+                    </tr>
+                    <tr>
+                        <td>**"D"**</td>
+                        <td>The number of **days** in the period.</td>
+                        <td>Total days elapsed.</td>
+                    </tr>
+                    <tr>
+                        <td>**"YD"**</td>
+                        <td>The number of **days remaining** after the last full year.</td>
+                        <td>Days until next birthday.</td>
+                    </tr>
+                    <tr>
+                        <td>**"YM"**</td>
+                        <td>The number of **months remaining** after the last full year.</td>
+                        <td>Months of service past the last full year.</td>
+                    </tr>
+                    <tr>
+                        <td>**"MD"**</td>
+                        <td>The number of **days remaining** after the last full month.</td>
+                        <td>Days left in the current month segment.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            ---
+
+            <h3>Example 💡 (Calculating Exact Age/Tenure)</h3>
+            <p>
+                If the start date (Date of Birth) is in **A2** and the end date (Today's Date) is **B2**, you can construct the full age/tenure:
+            </p>
+            <div class="formula-syntax">
+                <code>=DATEDIF(A2, B2, "Y") & " Years, " & D

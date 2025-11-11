@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEFT and RIGHT Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+        .formula-section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>LEFT and RIGHT Formula Practice 📝</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>LEFT & RIGHT: Extracting Text from Ends</h2>
+
+            <p>
+                The **LEFT** and **RIGHT** functions allow you to extract a specific number of characters from the beginning (left side) or the end (right side) of a text string.
+            </p>
+            <p>
+                **Key Use:** Isolating codes, extracting initials, or separating fixed-length parts of an identifier (e.g., getting the year from a part number).
+            </p>
+
+            ---
+            
+            <div class="formula-section">
+                <h3>1. LEFT Function</h3>
+                
+                <p>Retrieves characters starting from the **left** side of a text string.</p>
+                
+                <div class="formula-syntax">
+                    <code>=LEFT(text, [num_chars])</code>
+                </div>
+                
+                <ul class="argument-list">
+                    <li>
+                        <strong>text</strong>: The text string or cell reference containing the text you want to manipulate (e.g., `A2`).
+                    </li>
+                    <li>
+                        <strong>[num_chars]</strong>: *Optional*. The number of characters you want to extract, counting from the left. Default is 1.
+                    </li>
+                </ul>
+                
+                <h4>Example 💡</h4>
+                <p>If A2 contains **"XYZ-456-ABC"**, this extracts the first three characters:</p>
+                <div class="formula-syntax">
+                    <code>=LEFT(A2, 3)</code>  <span style="font-weight: normal;">&rarr; Result: **"XYZ"**</span>
+                </div>
+            </div>
+
+            ---
+            
+            <div class="formula-section">
+                <h3>2. RIGHT Function</h3>
+                
+                <p>Retrieves characters starting from the **right** side of a text string.</p>
+                
+                <div class="formula-syntax">
+                    <code>=RIGHT(text, [num_chars])</code>
+                </div>
+                
+                <ul class="argument-list">
+                    <li>
+                        <strong>text</strong>: The text string or cell reference containing the text you want to manipulate (e.g., `A2`).
+                    </li>
+                    <li>
+                        <strong>[num_chars]</strong>: *Optional*. The number of characters you want to extract, counting from the right. Default is 1.
+                    </li>
+                </ul>
+                
+                <h4>Example 💡</h4>
+                <p>If A2 contains **"XYZ-456-ABC"**, this extracts the last three characters:</p>
+                <div class="formula-syntax">
+                    <code>=RIGHT(A2, 3)</code>  <span style="font-weight: normal;">&rarr; Result: **"ABC"**</span>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+</body>
+</html>

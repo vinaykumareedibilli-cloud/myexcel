@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODAY and NOW Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+        .formula-section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>TODAY and NOW Formula Practice 📅</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>TODAY & NOW: Dynamic Date and Time</h2>
+
+            <p>
+                The **TODAY** and **NOW** functions are non-argument functions that return the current system date and/or time. They are **volatile**, meaning they recalculate every time the workbook is opened or a change is made, ensuring the displayed date/time is always current.
+            </p>
+            <p>
+                **Key Use:** Calculating the number of days until a deadline, determining the age of an invoice, or providing an automated timestamp for reports.
+            </p>
+
+            ---
+
+            <div class="formula-section">
+                <h3>1. TODAY Function</h3>
+
+                <p>Returns the **current date** only, formatted as a date. The result is equivalent to the **Integer** part of the internal Excel date value (serial number).</p>
+
+                <div class="formula-syntax">
+                    <code>=TODAY()</code>
+                </div>
+
+                <ul class="argument-list">
+                    <li>
+                        <strong>Arguments</strong>: None. You must include the empty parentheses.
+                    </li>
+                </ul>
+
+                <h4>Example 💡 (Calculating Age in Days)</h4>
+                <p>If a person's birthdate is in cell A2, you can calculate their current age in days:</p>
+                <div class="formula-syntax">
+                    <code>=TODAY() - A2</code>
+                </div>
+            </div>
+
+            ---
+
+            <div class="formula-section">
+                <h3>2. NOW Function</h3>
+
+                <p>Returns the **current date and time**, formatted as a date and time value. The result is the **Full** internal Excel date value (serial number, including the decimal fraction for time).</p>
+
+                <div class="formula-syntax">
+                    <code>=NOW()</code>
+                </div>
+                
+                <ul class="argument-list">
+                    <li>
+                        <strong>Arguments</strong>: None. You must include the empty parentheses.
+                    </li>
+                </ul>
+
+                <h4>Example 💡 (Timestamping a Report)</h4>
+                <p>To display a timestamp showing when the workbook was last recalculated:</p>
+                <div class="formula-syntax">
+                    <code>="Report Last Updated: " & TEXT(NOW(), "yyyy-mm-dd hh:mm AM/PM")</code>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

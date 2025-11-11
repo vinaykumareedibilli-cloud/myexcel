@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNIQUE Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>UNIQUE Formula Practice ⚡</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>UNIQUE: Extracting a List of Distinct Values</h2>
+
+            <p>
+                The **UNIQUE** function is a **Dynamic Array Formula** that returns a list of **unique (distinct)** values from a range or array. It automatically removes duplicates, saving significant time previously spent on removing duplicates manually or with complex array formulas.
+            </p>
+            <p>
+                **Key Use:** Creating dynamic drop-down lists (Data Validation), generating master lists of categories (e.g., all regions, all product IDs), and cleaning up raw data.
+            </p>
+
+            ---
+
+            <h3>Formula Syntax</h3>
+            <div class="formula-syntax">
+                <code>=UNIQUE(array, [by_col], [exactly_once])</code>
+            </div>
+
+            <p class="note">
+                **Dynamic Array Note:** Enter the formula once in the top-left cell; the results "spill" automatically into adjacent cells.
+            </p>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+            <ul class="argument-list">
+                <li>
+                    <strong>array</strong>: The range from which you want to return the unique values (e.g., the column containing product IDs, `A2:A100`).
+                </li>
+                <li>
+                    <strong>[by_col]</strong>: *Optional*. A logical value: **FALSE** (default) or omitted to compare rows. **TRUE** to compare columns. Use FALSE for column data.
+                </li>
+                <li>
+                    <strong>[exactly_once]</strong>: *Optional*. A logical value: **FALSE** (default) to return every unique item once. **TRUE** to return items that appear *only once* in the source data.
+                </li>
+            </ul>
+
+            ---
+
+            <h3>Example 💡 (Simple List of Unique Regions)</h3>
+            <p>
+                To generate a list of all unique values found in the Region column (C2:C100):
+            </p>
+            <div class="formula-syntax">
+                <code>=UNIQUE(C2:C100)</code>
+            </div>
+
+            <h3>Example 💡 (Finding Items that Appear Only Once)</h3>
+            <p>
+                To return only the names in column B that appear *just one time* in the entire list:
+            </p>
+            <div class="formula-syntax">
+                <code>=UNIQUE(B2:B100, FALSE, TRUE)</code>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

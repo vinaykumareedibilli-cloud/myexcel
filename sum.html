@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUM Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>SUM Formula Practice 📘</header>
+
+    <section>
+                <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+        <div class="container">
+            <h2>SUM: Adding Numbers in a Range</h2>
+
+            <p>
+                The **SUM** function is one of the most basic and frequently used Excel formulas. It simply **adds all the numbers** in a specified range of cells.
+            </p>
+            <p>
+                **Key Use:** Calculating grand totals, inventory counts, or cumulative scores.
+            </p>
+
+            ---
+
+            <h3>Formula Syntax</h3>
+            <div class="formula-syntax">
+                <code>=SUM(number1, [number2], ...)</code>
+            </div>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+            <ul class="argument-list">
+                <li>
+                    <strong>number1</strong>: The first number or range you want to add. This is required. (e.g., `A1` or `B2:B10`).
+                </li>
+                <li>
+                    <strong>[number2], ...</strong>: *Optional*. Additional numbers or ranges, up to 255 total, that you want to include in the sum.
+                </li>
+            </ul>
+
+            ---
+
+            <h3>Example 💡</h3>
+            <p>
+                To find the total sales from cells A1 through A10 and add the sales total from cell C5:
+            </p>
+            <div class="formula-syntax">
+                <code>=SUM(A1:A10, C5)</code>
+            </div>
+            
+        </div>
+    </section>
+
+</body>
+</html>

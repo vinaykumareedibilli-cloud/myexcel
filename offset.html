@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OFFSET Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>OFFSET Formula Practice 🧠</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>OFFSET: Creating Dynamic References</h2>
+
+            <p>
+                The **OFFSET** function returns a reference to a range that is a specified number of **rows** and **columns** away from a starting cell (the `reference`). You can also optionally specify the `height` and `width` of the returned range.
+            </p>
+            <p>
+                **Key Use:** Creating dynamic charts or ranges that automatically expand or shift based on external values, often used with functions like `SUM` or `AVERAGE`.
+            </p>
+
+            ---
+
+            <h3>Formula Syntax</h3>
+            <div class="formula-syntax">
+                <code>=OFFSET(reference, rows, cols, [height], [width])</code>
+            </div>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+            <ul class="argument-list">
+                <li>
+                    <strong>reference</strong>: The starting cell or range from which to base the offset (e.g., `A1`).
+                </li>
+                <li>
+                    <strong>rows</strong>: The number of rows to move down (positive number) or up (negative number) from the reference.
+                </li>
+                <li>
+                    <strong>cols</strong>: The number of columns to move right (positive number) or left (negative number) from the reference.
+                </li>
+                <li>
+                    <strong>[height]</strong>: *Optional*. The height (number of rows) of the returned reference. Default is the height of the `reference`.
+                </li>
+                <li>
+                    <strong>[width]</strong>: *Optional*. The width (number of columns) of the returned reference. Default is the width of the `reference`.
+                </li>
+            </ul>
+
+            ---
+
+            <h3>Example 💡 (Simple Offset)</h3>
+            <p>
+                Start at cell **B5**, move **2 rows down** and **1 column right**, and return the value of that single cell. (Result is the value of cell C7).
+            </p>
+            <div class="formula-syntax">
+                <code>=OFFSET(B5, 2, 1)</code>
+            </div>
+            
+            <h3>Example 💡 (Dynamic Sum Range)</h3>
+            <p>
+                Start at **A1**, move **0 rows** and **0 columns**, and create a sum range that is 1 row high and has a width determined by the value in cell **C1** (e.g., if C1=5, it sums A1:E1).
+            </p>
+            <div class="formula-syntax">
+                <code>=SUM(OFFSET(A1, 0, 0, 1, C1))</code>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

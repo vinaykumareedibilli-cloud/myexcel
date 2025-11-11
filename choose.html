@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CONCAT Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>CONCAT Formula Practice 📝</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>CONCAT: Joining Text Strings</h2>
+
+            <p>
+                The **CONCAT** function (introduced in newer Excel versions, replacing CONCATENATE) joins two or more text strings into one string. It's the standard way to merge content from different cells or add custom text.
+            </p>
+            <p>
+                **Key Use:** Combining first and last names, creating a full address from separate cells, or generating custom report titles.
+            </p>
+
+            ---
+
+            <h3>Formula Syntax</h3>
+            <div class="formula-syntax">
+                <code>=CONCAT(text1, [text2], ...)</code>
+            </div>
+
+            <p class="note">
+                **Alternative:** You can also use the **ampersand (&)** symbol to join text: <code>=text1 & text2</code>
+            </p>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+            <ul class="argument-list">
+                <li>
+                    <strong>text1</strong>: The first text item to join. This can be a cell reference (e.g., `A2`) or a text string enclosed in quotes (e.g., `"The total is: "`).
+                </li>
+                <li>
+                    <strong>[text2], ...</strong>: Additional text items to join. You can include up to 255 items.
+                </li>
+            </ul>
+
+            ---
+
+            <h3>Example 💡 (Joining Names)</h3>
+            <p>
+                To combine the first name in A2, a space, and the last name in B2:
+            </p>
+            <div class="formula-syntax">
+                <code>=CONCAT(A2, " ", B2)</code>
+            </div>
+
+            <h3>Example 💡 (Using Ampersand)</h3>
+            <p>
+                The equivalent using the ampersand (&) operator:
+            </p>
+            <div class="formula-syntax">
+                <code>=A2 & " " & B2</code>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

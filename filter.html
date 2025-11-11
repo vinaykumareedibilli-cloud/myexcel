@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FILTER Formula Practice</title>
+    <style>
+        /* Reusing Styles from Index Page */
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        header {
+            background-color: #217346;
+            color: white;
+            text-align: center;
+            padding: 25px 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 30px 8%;
+        }
+        h2 {
+            color: #217346;
+            margin-bottom: 20px;
+            border-left: 5px solid #217346;
+            padding-left: 10px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        .formula-syntax {
+            background-color: #e6e6e6; /* Light gray background */
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow-x: auto; 
+            margin: 20px 0;
+        }
+        .formula-syntax code {
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .argument-list li {
+            margin-bottom: 10px;
+        }
+        .argument-list strong {
+            color: #217346;
+        }
+        .back-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .back-btn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>FILTER Formula Practice ⚡</header>
+
+    <section>
+        <a href="excel.html" class="back-btn">← Back to All Formulas</a>
+
+        <div class="container">
+            <h2>FILTER: Extracting Data Dynamically</h2>
+
+            <p>
+                The **FILTER** function is a **Dynamic Array Formula** that filters a range of data based on criteria you define and returns all matching rows into a spill range.
+            </p>
+            <p>
+                **Key Use:** Quickly creating subset reports, generating lists based on selection (like from a drop-down menu), and replacing complex `INDEX/MATCH` or `VLOOKUP` arrays.
+            </p>
+
+            ---
+
+            <h3>Formula Syntax</h3>
+            <div class="formula-syntax">
+                <code>=FILTER(array, include, [if_empty])</code>
+            </div>
+
+            <p class="note">
+                **Dynamic Array Note:** Enter the formula once in the top-left cell; the results "spill" automatically into adjacent cells.
+            </p>
+
+            ---
+
+            <h3>Arguments (Parts of the Formula)</h3>
+            <ul class="argument-list">
+                <li>
+                    <strong>array</strong>: The range of data you want to filter (e.g., the entire data table `A2:D100`).
+                </li>
+                <li>
+                    <strong>include</strong>: A logical array (TRUE/FALSE) the same height/width as the `array` that specifies which rows to include. (e.g., `C2:C100 = "West"`).
+                </li>
+                <li>
+                    <strong>[if_empty]</strong>: *Optional*. The value to return if no rows meet the criteria (e.g., `"No results"`).
+                </li>
+            </ul>
+
+            ---
+
+            <h3>Example 💡 (Single Criterion)</h3>
+            <p>
+                To return all rows from the table A2:D100 where the Region column (C2:C100) equals "East":
+            </p>
+            <div class="formula-syntax">
+                <code>=FILTER(A2:D100, C2:C100 = "East", "None Found")</code>
+            </div>
+
+            <h3>Example 💡 (Multiple Criteria - AND Logic)</h3>
+            <p>
+                To filter for Region "East" **AND** Sales > 500. (Use the multiplication operator `*` for AND logic):
+            </p>
+            <div class="formula-syntax">
+                <code>=FILTER(A2:D100, (C2:C100 = "East") * (D2:D100 > 500), "None")</code>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
